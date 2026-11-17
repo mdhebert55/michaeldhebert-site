@@ -207,18 +207,6 @@ section{padding-block:4rem; border-top:1px solid var(--rule)}
 .career .who .tag{display:inline-block; margin-left:.5rem; font-family:var(--font-type); font-size:.65rem}
 .career .tag.news{border-color:var(--pencil); color:var(--pencil)}
 
-/* Off the clock */
-.off{display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:3rem; align-items:start}
-.off > div{min-width:0}
-.off-lede{font-size:1.1rem; max-width:40rem}
-.depth{background:var(--board); color:var(--board-ink); padding:1.25rem 1.4rem}
-.depth .slug{color:var(--board-ink); opacity:.75}
-.depth ol{list-style:none; margin:.75rem 0 0; padding:0; display:grid; gap:.5rem}
-.depth li{display:grid; grid-template-columns:2.25rem minmax(0,1fr); align-items:baseline; font-family:var(--font-display); font-size:1.35rem; border-top:1px solid var(--board-rule); padding-top:.5rem}
-.depth li:first-child{border-top:0; padding-top:0}
-.depth .pos{font-family:var(--font-type); font-weight:700; color:var(--board-num); font-size:1.2rem}
-@media (max-width: 860px){ .off{grid-template-columns:1fr; gap:1.75rem} }
-
 /* Toolkit */
 .kit{display:grid; grid-template-columns:repeat(auto-fit, minmax(15rem, 1fr)); gap:1.75rem}
 .kit h3{font-family:var(--font-type); font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:.5rem}
@@ -537,23 +525,6 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
       <li><span class="when">2019 &ndash; 2021</span><span class="who">TimesDaily <span class="tag news">Newsroom</span><span>Sports Writer &middot; Florence, Ala.</span></span><span class="what">Beat reporter for University of North Alabama athletics and area high schools, writing on daily deadlines and producing video for social.</span></li>
       <li><span class="when">College</span><span class="who">The Red &amp; Black <span class="tag news">Newsroom</span><span>Staff writer to sports editor &middot; Athens, Ga.</span></span><span class="what">Covered Georgia football as a beat writer, edited the sports section, and hosted the sports podcast.</span></li>
     </ol>
-  </section>
-
-  <section id="offclock">
-    <div class="off">
-      <div>
-        <div class="sec-head" style="margin-bottom:1rem"><h2>Off the clock</h2></div>
-        <p class="off-lede">I played high school football and turned down a roster spot at Rhodes College to go to Georgia, where I fell in love with journalism. I'll talk your ear off about sports: the stats, the game itself, and most of all the people who use it to become the best version of themselves.</p>
-      </div>
-      <div class="depth" aria-label="Sports depth chart">
-        <span class="slug">Depth chart</span>
-        <ol>
-          <li><span class="pos">1</span><span>Football</span></li>
-          <li><span class="pos">2</span><span>Basketball</span></li>
-          <li><span class="pos">3</span><span>Baseball</span></li>
-        </ol>
-      </div>
-    </div>
   </section>
 
   <section id="kit">
