@@ -38,6 +38,7 @@
   --board-ink:#EAF2EC;
   --board-num:#F5CF4E;
   --board-rule:#1F5A41;
+  --plate:#0A2A1D;
   --font-display:"Newsreader", "Iowan Old Style", Georgia, serif;
   --font-body:"Public Sans", "Segoe UI", system-ui, sans-serif;
   --font-type:"Courier Prime", "Courier New", ui-monospace, monospace;
@@ -46,13 +47,13 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --paper:#0D1511; --sheet:#132019; --ink:#E7F0EA; --muted:#9AB0A3; --rule:#24362C;
-    --pencil:#4FC985; --wash:#173024; --board:#123F2D; --board-ink:#EAF2EC; --board-num:#F5CF4E; --board-rule:#22603F;
+    --pencil:#4FC985; --wash:#173024; --board:#123F2D; --board-ink:#EAF2EC; --board-num:#F5CF4E; --board-rule:#22603F; --plate:#0B2C1F;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --paper:#0D1511; --sheet:#132019; --ink:#E7F0EA; --muted:#9AB0A3; --rule:#24362C;
-  --pencil:#4FC985; --wash:#173024; --board:#123F2D; --board-ink:#EAF2EC; --board-num:#F5CF4E; --board-rule:#22603F;
+  --pencil:#4FC985; --wash:#173024; --board:#123F2D; --board-ink:#EAF2EC; --board-num:#F5CF4E; --board-rule:#22603F; --plate:#0B2C1F;
   color-scheme:dark;
 }
 
@@ -153,6 +154,18 @@ section{padding-block:4rem; border-top:1px solid var(--rule)}
 .box h4{font-family:var(--font-display); font-size:1.3rem; margin:0; line-height:1.2; text-wrap:balance; font-weight:600}
 .box p{color:var(--muted); font-size:.95rem}
 .box .tools{font-family:var(--font-type); font-size:.75rem; color:var(--muted); margin-top:auto; padding-top:.6rem; border-top:1px dashed var(--rule)}
+
+/* Scoreboard plates */
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.score .n .plates{display:inline; letter-spacing:0}
+.score .n .seg{white-space:nowrap}
+.score .n .d{display:inline-block; min-width:.78em; text-align:center; background:var(--plate); color:var(--board-num); border-radius:3px; padding:.06em .05em .02em; margin:0 .07em .12em 0; position:relative; box-shadow:inset 0 0 0 1px var(--board-rule), inset 0 -2px 0 rgba(0,0,0,.28); line-height:1.1}
+.score .n .d::after{content:""; position:absolute; left:1px; right:1px; top:50%; height:1px; background:rgba(0,0,0,.4)}
+.score .n .d.blank{color:transparent}
+.score .n .sym{display:inline-block; margin:0 .1em 0 .02em; color:var(--board-num)}
+.score .n .d.tick{animation:tick .16s ease-out}
+@keyframes tick{from{transform:translateY(-12%); opacity:.55} to{transform:none; opacity:1}}
+@media (prefers-reduced-motion: reduce){ .score .n .d.tick{animation:none} }
 
 /* Clips */
 .clips{display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:3rem}
@@ -266,7 +279,7 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
       <p class="proof" aria-label="Sports writer, edited to digital marketer">
         <span class="struck">Sports writer</span><span class="caret" aria-hidden="true">&#8248;</span><span class="insert">digital marketer</span>
       </p>
-      <p class="lede">Every role I've had has compounded on the last. Newsrooms taught me to find the story and tell it on deadline. Local SEO taught me how people search, and franchise marketing taught me what makes them buy. Now I'm at the center of the digital ecosystem for a 760+ restaurant brand in one of the most competitive industries there is, telling the world about <i class="brand">Church's Texas Chicken&reg;</i>. I pair technical chops with a writer's voice and a customer's eye, back every call with data, and focus on the digital campaigns that drive revenue. <em>Find what the data is actually saying, and tell it plainly.</em></p>
+      <p class="lede">Newsrooms taught me to find the story and tell it on deadline. Local SEO taught me how people search, and franchise marketing taught me what makes them buy. Now I'm at the center of the digital ecosystem for a 760+ restaurant brand in one of the most competitive industries there is, telling the world about <i class="brand">Church's Texas Chicken&reg;</i>. I pair technical chops with a writer's voice and a customer's eye, back every call with data, and focus on the digital campaigns that drive revenue. <em>Find what the data is actually saying, and tell it plainly.</em></p>
       <div class="ctas">
         <a class="btn primary" href="#work">See the work</a>
         <a class="btn" href="assets/Michael-Hebert-Resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -582,6 +595,91 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
 </div>
 
 <script>
+(function(){
+  var nums = Array.prototype.slice.call(document.querySelectorAll('.score .n'));
+  if (!nums.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TOKEN = /\d[\d,]*(?:\.\d+)?/g;
+
+  function esc(c){ return c === '&' ? '&amp;' : c === '<' ? '&lt;' : c === '>' ? '&gt;' : c; }
+  function plates(str, prev){
+    // Each side of an arrow stays on one line, so before/after values never split mid-number
+    var out = '<span class="seg">';
+    for (var i = 0; i < str.length; i++) {
+      var c = str[i];
+      if (c === '\u2192') { out += '</span><span class="sym">' + c + '</span><span class="seg">'; continue; }
+      if (c === ' ') out += '<span class="d blank">0</span>';
+      else if (c >= '0' && c <= '9') out += '<span class="d' + (prev && prev[i] !== c ? ' tick' : '') + '">' + c + '</span>';
+      else out += '<span class="sym">' + esc(c) + '</span>';
+    }
+    return out + '</span>';
+  }
+  function frame(final, t){
+    return final.replace(TOKEN, function(tok){
+      var dec = (tok.split('.')[1] || '').length;
+      var comma = tok.indexOf(',') > -1;
+      var target = parseFloat(tok.replace(/,/g, ''));
+      var v = target * t;
+      var str = v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec, useGrouping: comma });
+      while (str.length < tok.length) str = ' ' + str;
+      return str;
+    });
+  }
+  function draw(el, str){
+    var vis = el.querySelector('.plates');
+    var prev = vis.getAttribute('data-shown');
+    vis.innerHTML = plates(str, prev);
+    vis.setAttribute('data-shown', str);
+  }
+  nums.forEach(function(el){
+    var final = el.textContent.trim();
+    el.setAttribute('data-final', final);
+    el.innerHTML = '<span class="sr">' + el.innerHTML + '</span><span class="plates" aria-hidden="true"></span>';
+    draw(el, final);
+  });
+  if (reduce || !('IntersectionObserver' in window)) return;
+
+  function run(el){
+    var final = el.getAttribute('data-final');
+    var start = null, dur = 1300;
+    function step(ts){
+      if (start === null) start = ts;
+      var t = Math.min(1, (ts - start) / dur);
+      var eased = 1 - Math.pow(1 - t, 3);
+      draw(el, t < 1 ? frame(final, eased) : final);
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  // Arm just before a scoreboard reaches the screen (zeroed), then count up once it is in view.
+  var armer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting && !e.target.dataset.armed && !e.target.dataset.done) {
+        e.target.dataset.armed = '1';
+        draw(e.target, frame(e.target.getAttribute('data-final'), 0));
+      }
+    });
+  }, { rootMargin: '0px 0px 240px 0px' });
+  var runner = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting && !e.target.dataset.done) {
+        e.target.dataset.done = '1';
+        runner.unobserve(e.target); armer.unobserve(e.target);
+        run(e.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  var vh = window.innerHeight || 800;
+  nums.forEach(function(el){
+    var r = el.getBoundingClientRect();
+    if (r.top < vh && r.bottom > 0) return; // already on screen at load: leave the finished numbers
+    armer.observe(el); runner.observe(el);
+  });
+  window.addEventListener('beforeprint', function(){
+    nums.forEach(function(el){ el.dataset.done = '1'; draw(el, el.getAttribute('data-final')); });
+  });
+})();
+
 (function(){
   var btn = document.getElementById('copy-email');
   var ok = document.getElementById('copied');
