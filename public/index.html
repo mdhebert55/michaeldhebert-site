@@ -18,7 +18,7 @@
 <meta property="profile:last_name" content="Hebert">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://michaeldhebert.com/assets/og-image.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23BF2B2B'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EMH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2317804A'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EMH%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Michael Hebert", "jobTitle": "Digital Operations Manager", "worksFor": {"@type": "Organization", "name": "Church's Texas Chicken"}, "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Georgia"}, "address": {"@type": "PostalAddress", "addressLocality": "Atlanta", "addressRegion": "GA", "addressCountry": "US"}, "knowsAbout": ["Digital marketing", "Google Analytics 4", "Google Tag Manager", "Local SEO", "Technical SEO", "Marketing attribution", "Sports journalism"], "sameAs": ["https://www.linkedin.com/in/michael-hebert-467085136/"], "url": "https://michaeldhebert.com/", "image": "https://michaeldhebert.com/assets/headshot.jpg"}</script>
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,16 +27,17 @@
 <style>
 /* Layout: a reporter's portfolio. Proof-marked hero, a newsroom-to-marketing translation table, case studies as box scores, then the clips. */
 :root{
-  --paper:#F4F5F7;
+  --paper:#F2F5F1;
   --sheet:#FFFFFF;
-  --ink:#16181D;
-  --muted:#575D6B;
-  --rule:#D8DBE1;
-  --pencil:#BF2B2B;
-  --board:#151A24;
-  --board-ink:#E9EBEF;
-  --board-num:#F2B544;
-  --board-rule:#2C3444;
+  --ink:#132019;
+  --muted:#52615A;
+  --rule:#D3DCD5;
+  --pencil:#17804A;
+  --wash:#E3EFE6;
+  --board:#0F3B2A;
+  --board-ink:#EAF2EC;
+  --board-num:#F5CF4E;
+  --board-rule:#1F5A41;
   --font-display:"Newsreader", "Iowan Old Style", Georgia, serif;
   --font-body:"Public Sans", "Segoe UI", system-ui, sans-serif;
   --font-type:"Courier Prime", "Courier New", ui-monospace, monospace;
@@ -44,14 +45,14 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#101217; --sheet:#171A21; --ink:#ECEDEF; --muted:#A0A6B2; --rule:#2A2F39;
-    --pencil:#FF6F61; --board:#1B2130; --board-ink:#E9EBEF; --board-num:#F2B544; --board-rule:#323B4D;
+    --paper:#0D1511; --sheet:#132019; --ink:#E7F0EA; --muted:#9AB0A3; --rule:#24362C;
+    --pencil:#4FC985; --wash:#173024; --board:#123F2D; --board-ink:#EAF2EC; --board-num:#F5CF4E; --board-rule:#22603F;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#101217; --sheet:#171A21; --ink:#ECEDEF; --muted:#A0A6B2; --rule:#2A2F39;
-  --pencil:#FF6F61; --board:#1B2130; --board-ink:#E9EBEF; --board-num:#F2B544; --board-rule:#323B4D;
+  --paper:#0D1511; --sheet:#132019; --ink:#E7F0EA; --muted:#9AB0A3; --rule:#24362C;
+  --pencil:#4FC985; --wash:#173024; --board:#123F2D; --board-ink:#EAF2EC; --board-num:#F5CF4E; --board-rule:#22603F;
   color-scheme:dark;
 }
 
@@ -116,9 +117,9 @@ section{padding-block:4rem; border-top:1px solid var(--rule)}
 .sec-head p{color:var(--muted); max-width:30rem}
 
 /* What I do */
-#do{padding-block:2.75rem 3.25rem}
+#do{padding-block:2.5rem 2.75rem; padding-inline:clamp(1.25rem, 3vw, 2.25rem); background:var(--wash); border-top:0; margin-top:.5rem}
 .pillars{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:2rem}
-.pillar{border-top:2px solid var(--ink); padding-top:1rem; display:grid; gap:.55rem; align-content:start; min-width:0}
+.pillar{border-top:3px solid var(--pencil); padding-top:1rem; display:grid; gap:.55rem; align-content:start; min-width:0}
 .pillar h3{font-size:1.35rem}
 .pillar p{color:var(--muted); font-size:.95rem}
 .pillar .proofline{font-family:var(--font-type); font-size:.78rem; letter-spacing:.02em; color:var(--pencil)}
@@ -190,7 +191,20 @@ section{padding-block:4rem; border-top:1px solid var(--rule)}
 .career .who span{display:block; font-family:var(--font-body); font-weight:400; font-size:.9rem; color:var(--muted)}
 .career .what{color:var(--muted); font-size:.95rem}
 .career .tag{font-family:var(--font-type); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; padding:.1rem .4rem; border:1px solid var(--rule); margin-left:.4rem; white-space:nowrap; vertical-align:middle}
+.career .who .tag{display:inline-block; margin-left:.5rem; font-family:var(--font-type); font-size:.65rem}
 .career .tag.news{border-color:var(--pencil); color:var(--pencil)}
+
+/* Off the clock */
+.off{display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:3rem; align-items:start}
+.off > div{min-width:0}
+.off-lede{font-size:1.1rem; max-width:40rem}
+.depth{background:var(--board); color:var(--board-ink); padding:1.25rem 1.4rem}
+.depth .slug{color:var(--board-ink); opacity:.75}
+.depth ol{list-style:none; margin:.75rem 0 0; padding:0; display:grid; gap:.5rem}
+.depth li{display:grid; grid-template-columns:2.25rem minmax(0,1fr); align-items:baseline; font-family:var(--font-display); font-size:1.35rem; border-top:1px solid var(--board-rule); padding-top:.5rem}
+.depth li:first-child{border-top:0; padding-top:0}
+.depth .pos{font-family:var(--font-type); font-weight:700; color:var(--board-num); font-size:1.2rem}
+@media (max-width: 860px){ .off{grid-template-columns:1fr; gap:1.75rem} }
 
 /* Toolkit */
 .kit{display:grid; grid-template-columns:repeat(auto-fit, minmax(15rem, 1fr)); gap:1.75rem}
@@ -252,7 +266,7 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
       <p class="proof" aria-label="Sports writer, edited to digital marketer">
         <span class="struck">Sports writer</span><span class="caret" aria-hidden="true">&#8248;</span><span class="insert">digital marketer</span>
       </p>
-      <p class="lede">Every role I've had has compounded on the last. Newsrooms taught me to find the story and tell it on deadline. Local SEO taught me how people search, and franchise marketing taught me what makes them buy. Now I'm at the center of the digital ecosystem for a 760+ restaurant brand in one of the most competitive industries there is, telling the world about <i class="brand">Church's Texas Chicken&reg;</i>. I pair technical chops with a writer's voice and a customer's eye, back every call with data, and focus on the campaigns that actually produce revenue. <em>Find what the data is actually saying, and tell it plainly.</em></p>
+      <p class="lede">Every role I've had has compounded on the last. Newsrooms taught me to find the story and tell it on deadline. Local SEO taught me how people search, and franchise marketing taught me what makes them buy. Now I'm at the center of the digital ecosystem for a 760+ restaurant brand in one of the most competitive industries there is, telling the world about <i class="brand">Church's Texas Chicken&reg;</i>. I pair technical chops with a writer's voice and a customer's eye, back every call with data, and focus on the digital campaigns that drive revenue. <em>Find what the data is actually saying, and tell it plainly.</em></p>
       <div class="ctas">
         <a class="btn primary" href="#work">See the work</a>
         <a class="btn" href="assets/Michael-Hebert-Resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -438,7 +452,7 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
   <section id="clips">
     <div class="sec-head">
       <h2>Clips</h2>
-      <p>Five years as a full-time sports journalist, and I still freelance when time allows. A few of the stories I'm proudest of.</p>
+      <p>Five years as a full-time sports journalist, mostly features on athletes working through obstacles on and off the field. I still freelance when time allows. A few of the stories I'm proudest of.</p>
     </div>
     <div class="clips">
       <div class="series">
@@ -510,6 +524,23 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
       <li><span class="when">2019 &ndash; 2021</span><span class="who">TimesDaily <span class="tag news">Newsroom</span><span>Sports Writer &middot; Florence, Ala.</span></span><span class="what">Beat reporter for University of North Alabama athletics and area high schools, writing on daily deadlines and producing video for social.</span></li>
       <li><span class="when">College</span><span class="who">The Red &amp; Black <span class="tag news">Newsroom</span><span>Staff writer to sports editor &middot; Athens, Ga.</span></span><span class="what">Covered Georgia football as a beat writer, edited the sports section, and hosted the sports podcast.</span></li>
     </ol>
+  </section>
+
+  <section id="offclock">
+    <div class="off">
+      <div>
+        <div class="sec-head" style="margin-bottom:1rem"><h2>Off the clock</h2></div>
+        <p class="off-lede">I played high school football and turned down a roster spot at Rhodes College to go to Georgia, where I fell in love with journalism. I'll talk your ear off about sports: the stats, the game itself, and most of all the people who use it to become the best version of themselves.</p>
+      </div>
+      <div class="depth" aria-label="Sports depth chart">
+        <span class="slug">Depth chart</span>
+        <ol>
+          <li><span class="pos">1</span><span>Football</span></li>
+          <li><span class="pos">2</span><span>Basketball</span></li>
+          <li><span class="pos">3</span><span>Baseball</span></li>
+        </ol>
+      </div>
+    </div>
   </section>
 
   <section id="kit">
