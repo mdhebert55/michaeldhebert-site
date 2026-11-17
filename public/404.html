@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found | Michael Hebert</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2317804A'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EMH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,700&family=Public+Sans:wght@400;500&family=Courier+Prime:wght@400;700&family=Caveat:wght@600&display=swap">
+<style>
+:root{
+  --paper:#F2F5F1; --ink:#132019; --muted:#52615A; --pencil:#17804A;
+  --board:#0F3B2A; --board-ink:#EAF2EC; --board-num:#F5CF4E; --plate:#0A2A1D; --board-rule:#1F5A41;
+  --font-display:"Newsreader", Georgia, serif; --font-body:"Public Sans", system-ui, sans-serif;
+  --font-type:"Courier Prime", "Courier New", monospace; --font-hand:"Caveat", cursive;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --paper:#0D1511; --ink:#E7F0EA; --muted:#9AB0A3; --pencil:#4FC985; --board:#123F2D; --plate:#0B2C1F; --board-rule:#22603F; color-scheme:dark; }
+}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px));
+  display:grid; place-items:center; min-height:100vh}
+main{max-width:34rem; padding-block:3rem; display:grid; gap:1.25rem}
+.board{background:var(--board); color:var(--board-ink); padding:1rem 1.25rem; display:flex; align-items:center; gap:1rem; width:max-content; max-width:100%}
+.board .l{font-family:var(--font-type); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; opacity:.8}
+.plates{display:flex; gap:.25rem}
+.d{font-family:var(--font-type); font-weight:700; font-size:2rem; color:var(--board-num); background:var(--plate); min-width:1.6rem; text-align:center; border-radius:3px; box-shadow:inset 0 0 0 1px var(--board-rule); position:relative; line-height:1.15}
+.d::after{content:""; position:absolute; left:1px; right:1px; top:50%; height:1px; background:rgba(0,0,0,.4)}
+h1{font-family:var(--font-display); font-size:clamp(2.4rem, 8vw, 3.4rem); line-height:1.05; margin:0; text-wrap:balance}
+h1 .note{font-family:var(--font-hand); color:var(--pencil); font-weight:600; display:block; font-size:.7em; margin-top:.2rem}
+p{margin:0; color:var(--muted); font-size:1.05rem}
+.ctas{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.5rem}
+a.btn{font-family:var(--font-type); font-size:.9rem; padding:.7rem 1.1rem; border:1.5px solid var(--ink); text-decoration:none; color:var(--ink)}
+a.btn.primary{background:var(--ink); color:var(--paper)}
+a.btn:hover{border-color:var(--pencil); color:var(--pencil)}
+a.btn.primary:hover{background:var(--pencil); color:var(--paper)}
+:focus-visible{outline:2px solid var(--pencil); outline-offset:3px}
+</style>
+</head>
+<body>
+<main>
+  <div class="board" aria-hidden="true"><span class="l">Error</span><span class="plates"><span class="d">4</span><span class="d">0</span><span class="d">4</span></span></div>
+  <h1>Out of bounds.<span class="note">this page doesn't exist</span></h1>
+  <p>The link may be old or mistyped. Everything worth reading is back on the main page.</p>
+  <div class="ctas">
+    <a class="btn primary" href="/#work">See the box scores</a>
+    <a class="btn" href="/">Back to the home page</a>
+  </div>
+</main>
+</body>
+</html>
