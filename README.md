@@ -11,7 +11,7 @@ Personal portfolio site for Michael Hebert: digital marketing and operations, wi
 Edit `public/index.html` (or ask Claude to) and commit to `main`. Cloudflare redeploys automatically.
 
 ## Live URL
-https://michaeldhebert-site.mdhebert55.workers.dev/
+https://michaeldhebert.com/
 
 ## If a custom domain is added later
 In the `<head>` of `public/index.html`, update these to the new domain:
