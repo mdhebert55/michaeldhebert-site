@@ -172,6 +172,10 @@ section{padding-block:4rem; border-top:1px solid var(--rule)}
 /* Clips */
 .clips{display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:3rem}
 .clips > div{min-width:0}
+.clips-left{display:grid; gap:2rem; align-content:start; min-width:0}
+.clip-photo{margin:0; display:grid; gap:.6rem}
+.clip-photo img{display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--rule)}
+.clip-photo figcaption{font-family:var(--font-type); font-size:.78rem; color:var(--muted); letter-spacing:.02em}
 .series{border-left:2px solid var(--pencil); padding-left:1.25rem}
 .series h3, .clipgroup h3{font-size:1.35rem; margin-bottom:.35rem}
 .series .intro{color:var(--muted); font-size:.95rem; margin-bottom:1.25rem; max-width:34rem}
@@ -458,6 +462,11 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
       <p>Five years as a full-time sports journalist, with a passion for telling stories of athletes overcoming obstacles to become the best version of themselves.</p>
     </div>
     <div class="clips">
+      <div class="clips-left">
+        <figure class="clip-photo">
+          <img src="assets/interview.jpg" alt="Michael Hebert interviewing a University of North Alabama football player on the field after a game" width="1000" height="750" loading="lazy">
+          <figcaption>On the beat: a postgame interview with a University of North Alabama player for the TimesDaily.</figcaption>
+        </figure>
       <div class="series">
         <span class="slug">Breaking news series &middot; TimesDaily</span>
         <h3>The ASUN expansion</h3>
@@ -469,6 +478,7 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
           <li><div><a class="hl" href="https://www.timesdaily.com/sports/una_sports/asun-expansion-central-arkansas-jacksonville-state-and-eastern-kentucky-to-join/article_0c91cb1d-7a7c-5047-a1a9-2459bed4a3e0.html" target="_blank" rel="noopener">3 regional schools to join the conference</a><span class="outlet">TimesDaily</span></div></li>
           <li><div><a class="hl" href="https://www.timesdaily.com/asun-conference-officially-adds-three-new-members/article_25c99b0e-624a-11eb-a4d5-7f85051c902b.html" target="_blank" rel="noopener">ASUN growing, adding football with addition of three new schools</a><span class="outlet">TimesDaily</span></div></li>
         </ol>
+      </div>
       </div>
       <div>
         <div class="clipgroup">
@@ -498,6 +508,7 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
       <div>
         <div class="sec-head" style="margin-bottom:1.25rem"><h2>On air</h2></div>
         <ul class="air">
+          <li><span class="role">Guest</span><a class="hl" href="https://www.inforum.com/sports/hot-mic-with-dom-izzo-2-5-21-michael-hebert-jordan-wilhelm-my-dad" target="_blank" rel="noopener">Hot Mic with Dom Izzo</a><span class="outlet">The Forum (Inforum) &middot; Feb. 5, 2021</span></li>
           <li><span class="role">Host</span><a class="hl" href="https://www.redandblack.com/sports/sports-podcast-looking-back-looking-ahead/article_c95dad10-7f3e-11e8-9d9e-3ba540c4cda4.html" target="_blank" rel="noopener">Red, Black and Heard All Over, with assistant sports editor Tommy Boyd</a></li>
           <li><span class="role">Beat writer</span><a class="hl" href="https://www.redandblack.com/gameday/the-red-black-roundtable-previewing-no-georgia-vs-no-south/article_be229588-b1ce-11e8-bbd0-07f81fdd7e63.html" target="_blank" rel="noopener">Red &amp; Black Roundtable: No. 3 Georgia vs. No. 24 South Carolina</a></li>
           <li><span class="role">Beat writer</span><a class="hl" href="https://www.redandblack.com/gameday/the-red-black-roundtable-previewing-georgia-s-upcoming-game-against/article_f5cc82b0-abe7-11e8-a69b-e38b36ea9f7a.html" target="_blank" rel="noopener">Red &amp; Black Roundtable: No. 3 Georgia vs. Austin Peay</a></li>
