@@ -111,6 +111,15 @@ section{padding-block:4rem; border-top:1px solid var(--rule)}
 .sec-head h2{font-size:clamp(1.9rem, 4vw, 2.6rem)}
 .sec-head p{color:var(--muted); max-width:30rem}
 
+/* What I do */
+#do{padding-block:2.75rem 3.25rem}
+.pillars{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:2rem}
+.pillar{border-top:2px solid var(--ink); padding-top:1rem; display:grid; gap:.55rem; align-content:start; min-width:0}
+.pillar h3{font-size:1.35rem}
+.pillar p{color:var(--muted); font-size:.95rem}
+.pillar .proofline{font-family:var(--font-type); font-size:.78rem; letter-spacing:.02em; color:var(--pencil)}
+.box.wide{grid-column:1 / -1}
+
 /* Translation table */
 .translate{display:grid; gap:0; border-top:2px solid var(--ink)}
 .trow{display:grid; grid-template-columns:minmax(0,1fr) 2.5rem minmax(0,1fr) minmax(0,1.6fr); gap:1rem; align-items:baseline; padding-block:1.1rem; border-bottom:1px solid var(--rule)}
@@ -135,7 +144,7 @@ section{padding-block:4rem; border-top:1px solid var(--rule)}
 .score .n{font-family:var(--font-type); font-weight:700; font-size:clamp(1.3rem, 2.4vw, 1.6rem); color:var(--board-num); line-height:1.15; font-variant-numeric:tabular-nums; overflow-wrap:anywhere}
 .score .l{font-family:var(--font-type); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--board-ink); opacity:.8; margin-top:.25rem; line-height:1.35}
 .score.one{grid-template-columns:1fr}
-.box .story{padding:1.15rem 1.15rem 1.25rem; display:grid; gap:.6rem; flex:1}
+.box .story{padding:1.15rem 1.15rem 1.25rem; display:grid; gap:.6rem; flex:1; align-content:start}
 .box h4{font-family:var(--font-display); font-size:1.3rem; margin:0; line-height:1.2; text-wrap:balance; font-weight:600}
 .box p{color:var(--muted); font-size:.95rem}
 .box .tools{font-family:var(--font-type); font-size:.75rem; color:var(--muted); margin-top:auto; padding-top:.6rem; border-top:1px dashed var(--rule)}
@@ -205,6 +214,7 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
   .hero{grid-template-columns:1fr; gap:2.5rem; padding-block:2.75rem}
   .cred{justify-self:start; transform:rotate(-1deg)}
   .clips, .split, .contact .inner{grid-template-columns:1fr; gap:2.5rem}
+  .pillars{grid-template-columns:1fr; gap:1.75rem}
   .trow{grid-template-columns:minmax(0,1fr) 2rem minmax(0,1fr); }
   .trow .how{grid-column:1 / -1}
   .thead .h-how{display:none}
@@ -224,12 +234,10 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
   <header class="top">
     <span class="mark">Michael Hebert</span>
     <nav aria-label="Sections">
-      <a href="#beat">The beat</a>
-      <a href="#work">Box scores</a>
+      <a href="#work">Work</a>
       <a href="#clips">Clips</a>
       <a href="#career">Career</a>
       <a href="#contact">Contact</a>
-      <a href="https://www.linkedin.com/in/michael-hebert-467085136/" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
   </header>
 
@@ -240,12 +248,12 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
       <p class="proof" aria-label="Sports writer, edited to digital marketer">
         <span class="struck">Sports writer</span><span class="caret" aria-hidden="true">&#8248;</span><span class="insert">digital marketer</span>
       </p>
-      <p class="lede">I spent five years covering college and high school sports on deadline. Now I run digital operations for a 760+ restaurant brand. The job changed. The method didn't. <em>Find what the data is actually saying, verify it, and explain it plainly to the people who act on it.</em></p>
+      <p class="lede">I run digital marketing and operations for a 760+ restaurant brand: the analytics, local search, and launches that tie marketing to revenue. Before that, I spent five years covering sports on deadline. The job changed. The method didn't. <em>Find what the data is actually saying, verify it, and explain it plainly to the people who act on it.</em></p>
       <div class="ctas">
         <a class="btn primary" href="#work">See the work</a>
-        <a class="btn" href="#clips">Read the clips</a>
-        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn" href="assets/Michael-Hebert-Resume.pdf" target="_blank" rel="noopener">Resume</a>
         <a class="btn" href="https://www.linkedin.com/in/michael-hebert-467085136/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="#contact">Get in touch</a>
       </div>
     </div>
     <aside class="cred" aria-label="Press credential">
@@ -263,38 +271,22 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
     </aside>
   </div>
 
-  <section id="beat">
-    <div class="sec-head">
-      <h2>Same habits, new beat</h2>
-      <p>Everything I do in marketing started in a newsroom. Here's how the skills carried over.</p>
-    </div>
-    <div class="translate" role="table" aria-label="Newsroom skills and how they carry into marketing">
-      <div class="trow thead" role="row">
-        <span role="columnheader">In the newsroom</span><span aria-hidden="true"></span><span role="columnheader">In marketing</span><span class="h-how" role="columnheader">What it looks like</span>
+  <section id="do" aria-label="What I do">
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Measurement &amp; attribution</h3>
+        <p>Tracking, consent, and reporting across web and app, so every campaign can be tied back to revenue.</p>
+        <span class="proofline">1.6% &rarr; 42% of digital revenue attributed</span>
       </div>
-      <div class="trow" role="row">
-        <span class="then" role="cell">Working a beat</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Owning a channel</span>
-        <span class="how" role="cell">I covered one program until I knew it cold. Now it's local search, analytics, and tracking for 760+ restaurants.</span>
+      <div class="pillar">
+        <h3>Search &amp; local</h3>
+        <p>Local and technical SEO at scale, built around what nearby customers actually search for.</p>
+        <span class="proofline">760+ restaurants &middot; 117 franchise markets</span>
       </div>
-      <div class="trow" role="row">
-        <span class="then" role="cell">Verifying sources</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Validating data</span>
-        <span class="how" role="cell">No number goes in a report until I've checked it against a second source, the same way no quote ran without confirmation.</span>
-      </div>
-      <div class="trow" role="row">
-        <span class="then" role="cell">Writing the lede</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Leading with the finding</span>
-        <span class="how" role="cell">Executive summaries, page titles, and meta descriptions all get the inverted pyramid. Most important thing first.</span>
-      </div>
-      <div class="trow" role="row">
-        <span class="then" role="cell">House style</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Governance</span>
-        <span class="how" role="cell">I wrote the UTM and tag management standards that agencies and internal teams follow. A stylebook, for data.</span>
-      </div>
-      <div class="trow" role="row">
-        <span class="then" role="cell">Interviewing</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Gathering requirements</span>
-        <span class="how" role="cell">Asking the right follow-up question is how you turn a vague request into a ticket a developer can actually build.</span>
-      </div>
-      <div class="trow" role="row">
-        <span class="then" role="cell">Filing on deadline</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Shipping on the calendar</span>
-        <span class="how" role="cell">Launches, release windows, and weekly reports run on the same clock a sports desk does.</span>
+      <div class="pillar">
+        <h3>Launches &amp; partners</h3>
+        <p>Taking new channels from idea to live, and running the agencies and vendors who help build them.</p>
+        <span class="proofline">First-party catering &middot; multi-million-dollar campaigns</span>
       </div>
     </div>
   </section>
@@ -388,28 +380,53 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
     <div class="org">
       <div class="org-head"><h3>LoadUp Technologies</h3><span class="slug">Digital Marketing Specialist &middot; 2021 to 2024</span></div>
       <div class="boxes">
-        <article class="box">
+        <article class="box wide">
           <div class="score">
             <div><div class="n">+3,027</div><div class="l">LinkedIn followers in one year</div></div>
-            <div><div class="n">$13.3K</div><div class="l">Revenue from 78 social conversions</div></div>
+            <div><div class="n">600+</div><div class="l">Google and Nextdoor local listings built</div></div>
           </div>
           <div class="story">
-            <h4>Ran the company's digital front porch</h4>
-            <p>Wrote and scheduled daily social content, handled reviews and comments, and tied social activity to booked jobs.</p>
-            <span class="tools">LinkedIn &middot; Facebook &middot; Instagram &middot; TikTok</span>
+            <h4>Content, social, and local listings, from writer up</h4>
+            <p>Started by writing 100+ service pages, then ran social, reviews, and local listings for a national junk removal service, tying social activity to $13.3K in booked jobs.</p>
+            <span class="tools">SEO content &middot; LinkedIn &middot; Facebook &middot; Google Business Profile &middot; Nextdoor</span>
           </div>
         </article>
-        <article class="box">
-          <div class="score">
-            <div><div class="n">100+</div><div class="l">Google Business Profiles built</div></div>
-            <div><div class="n">500+</div><div class="l">Nextdoor pages launched</div></div>
-          </div>
-          <div class="story">
-            <h4>Local visibility, from content writer up</h4>
-            <p>Started by writing 100+ service pages, then grew local listings by picking each state's top cities from zip code analysis.</p>
-            <span class="tools">Google Business Profile &middot; Nextdoor &middot; SEO content</span>
-          </div>
-        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="beat">
+    <div class="sec-head">
+      <h2>Same habits, new beat</h2>
+      <p>Everything I do in marketing started in a newsroom. Here's how the skills carried over.</p>
+    </div>
+    <div class="translate" role="table" aria-label="Newsroom skills and how they carry into marketing">
+      <div class="trow thead" role="row">
+        <span role="columnheader">In the newsroom</span><span aria-hidden="true"></span><span role="columnheader">In marketing</span><span class="h-how" role="columnheader">What it looks like</span>
+      </div>
+      <div class="trow" role="row">
+        <span class="then" role="cell">Working a beat</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Owning a channel</span>
+        <span class="how" role="cell">I covered one program until I knew it cold. Now it's local search, analytics, and tracking for 760+ restaurants.</span>
+      </div>
+      <div class="trow" role="row">
+        <span class="then" role="cell">Verifying sources</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Validating data</span>
+        <span class="how" role="cell">No number goes in a report until I've checked it against a second source, the same way no quote ran without confirmation.</span>
+      </div>
+      <div class="trow" role="row">
+        <span class="then" role="cell">Writing the lede</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Leading with the finding</span>
+        <span class="how" role="cell">Executive summaries, page titles, and meta descriptions all get the inverted pyramid. Most important thing first.</span>
+      </div>
+      <div class="trow" role="row">
+        <span class="then" role="cell">House style</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Governance</span>
+        <span class="how" role="cell">I wrote the UTM and tag management standards that agencies and internal teams follow. A stylebook, for data.</span>
+      </div>
+      <div class="trow" role="row">
+        <span class="then" role="cell">Interviewing</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Gathering requirements</span>
+        <span class="how" role="cell">Asking the right follow-up question is how you turn a vague request into a ticket a developer can actually build.</span>
+      </div>
+      <div class="trow" role="row">
+        <span class="then" role="cell">Filing on deadline</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="now" role="cell">Shipping on the calendar</span>
+        <span class="how" role="cell">Launches, release windows, and weekly reports run on the same clock a sports desk does.</span>
       </div>
     </div>
   </section>
@@ -516,6 +533,7 @@ footer{padding-block:1.5rem 2.5rem; font-family:var(--font-type); font-size:.75r
         <span class="ok" id="copied" hidden>Copied</span>
       </div>
       <p class="meta"><a class="li" href="https://www.linkedin.com/in/michael-hebert-467085136/" target="_blank" rel="noopener">linkedin.com/in/michael-hebert-467085136</a></p>
+      <p class="meta"><a class="li" href="assets/Michael-Hebert-Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></p>
       <p class="meta">Atlanta, Georgia</p>
     </div>
   </div>
