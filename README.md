@@ -10,9 +10,12 @@ Personal portfolio site for Michael Hebert: digital marketing and operations, wi
 ## Updating
 Edit `public/index.html` (or ask Claude to) and commit to `main`. Cloudflare redeploys automatically.
 
-## Before launch on a custom domain
-In the `<head>` of `public/index.html`, replace the `SITE_URL` comment with:
+## Live URL
+https://michaeldhebert-site.mdhebert55.workers.dev/
+
+## If a custom domain is added later
+In the `<head>` of `public/index.html`, update these to the new domain:
 - `<link rel="canonical" href="https://YOUR-DOMAIN/">`
 - `<meta property="og:url" content="https://YOUR-DOMAIN/">`
 - `<meta property="og:image" content="https://YOUR-DOMAIN/assets/og-image.jpg">`
-and add `"url"` and `"image"` to the Person JSON-LD.
+and the `"url"` and `"image"` values in the Person JSON-LD.
